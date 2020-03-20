@@ -2,7 +2,7 @@
     <apex:form >
       
     <apex:outputPanel layout="block">
-    <label for="checkbox"> Limit to Account I own: </label>
+    <label for="checkbox"> Limit to Mail I own: </label>
         <apex:inputCheckbox value="{!IsOwnerSpecific}" />
     </apex:outputPanel>
       
@@ -22,9 +22,9 @@
                <apex:pageBlockTable value="{!results}" var="a"
                                    rendered="{!NOT(ISNULL(results))}">
                                     
-                  <apex:column value="{!a.Name}"/>
-                  <apex:column value="{!a.Industry}"/>
-                  <apex:column value="{!a.Rating}"/>
+                  <apex:column value="{!a.Address__c}"/>
+                  <apex:column value="{!a.Insured_Value__c}"/>
+                  <apex:column value="{!a.Recipient__c}"/>
                   
        </apex:pageBlockTable>
        </apex:pageBlockSection>
