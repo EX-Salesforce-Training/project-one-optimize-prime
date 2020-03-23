@@ -1,0 +1,20 @@
+<apex:page controller="PastDeliveriesAndPackagesController">
+    <apex:form>
+        <apex:pageBlock title="Package List" id="package_list">
+            <!--Will allow users to input an entry based on a picklist.
+            This will generate a list of orders based on status along with all related
+            fields.-->
+            <apex:inputField/>
+            <apex:commandButton action="{!genOrderList}" 
+            value="Generate List" reRender="display"/>
+        </apex:pageBlock>
+        <apex:pageBlock id="dispay" title="Orders">
+            <apex:pageBlockTable value="{!orderList}" var="order">
+                <apex:column value="{!order.ordernumber}"/>
+                <apex:column value="{!order.type}"/>
+                <apex:column value="{!order.description}"/>
+                <apex:column value="{!order.enddate}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
