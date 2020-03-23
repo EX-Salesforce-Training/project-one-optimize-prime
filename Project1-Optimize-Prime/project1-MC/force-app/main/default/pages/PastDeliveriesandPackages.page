@@ -1,20 +1,23 @@
 <apex:page controller="PastDeliveriesAndPackagesController">
-    <apex:form>
-        <apex:pageBlock title="Package List" id="package_list">
+    <apex:form >
+        <apex:slds />
+        <div class="slds-scope">
+            <apex:pageBlock title="Package List" id="package_list">
             <!--Will allow users to input an entry based on a picklist.
             This will generate a list of orders based on status along with all related
             fields.-->
-            <apex:inputField/>
+            <apex:inputField value="{!orderVal.Order_Status__c}"/>
             <apex:commandButton action="{!genOrderList}" 
             value="Generate List" reRender="display"/>
-        </apex:pageBlock>
-        <apex:pageBlock id="dispay" title="Orders">
-            <apex:pageBlockTable value="{!orderList}" var="order">
-                <apex:column value="{!order.ordernumber}"/>
-                <apex:column value="{!order.type}"/>
-                <apex:column value="{!order.description}"/>
-                <apex:column value="{!order.enddate}"/>
-            </apex:pageBlockTable>
-        </apex:pageBlock>
+            </apex:pageBlock>
+            <apex:pageBlock id="dispay" title="Orders">
+                <apex:pageBlockTable value="{!orderList}" var="order">
+                    <apex:column value="{!order.ordernumber}"/>
+                    <apex:column value="{!order.type}"/>
+                    <apex:column value="{!order.description}"/>
+                    <apex:column value="{!order.enddate}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </div>
     </apex:form>
 </apex:page>

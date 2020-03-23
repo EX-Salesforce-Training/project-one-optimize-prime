@@ -1,7 +1,7 @@
 /*
 *   Name:       Matt Carey
 *   Date:       03/22/2020
-*   Update:     03/22/2020
+*   Update:     03/23/2020
 *   Purpose:    Custom controller for accessing the Orders object in
                 Salesforce to display on Visualforce page. Should display
                 past deliveries as well as current deliveries based on status
@@ -9,19 +9,22 @@
                 of the Order.
 */
 public class PastDeliveriesAndPackagesController {
-    //Create two public variables.
-    //The first one should be a public constructor that will have a getter and setter method.
-    //The second variable will hold a list of Order objects and will have a getter and setter method.
+    /*
+    *   Create two variables that have their own getter and setter methods
+    *   The first should be a Order variable for holding a value for the database
+    *   The second variable should be of type list and hold a list of Order objects */
     public Order orderVal {get;set;}
-    public List<Order> orderList {get;set;}
+    public list<Order> orderList {get;set;}
 
-    //Create a method that will display the Order objects as a method call.
+    //Create a public constructor that will set the orderVal variable to a default value.
     public PastDeliveriesAndPackagesController(){
-        orderVal = new Order(Status = 'Draft');
+        orderVal = New Order(Order_Status__c = 'Created');
     }
 
-    //Create a public method that doesn't return anything
-    //and takes no parameters
-    public void genOrderList(){orderList = [select id, description, type, shippingaddress,
-        ordernumber, enddate from Order where status = :orderVal.Status];}
+    //Create a method that will generate a list of Orders. Returning nothing and taking no parameters.
+    public void genOrderList(){
+        //Assign the orderList variable to hold a SOQL statement that will hold ingormation to display
+        orderList = [select id, ordernumber, type, description, enddate from Order
+        where Order_Status__c = :orderVal.Order_Status__c];
+    }
 }
