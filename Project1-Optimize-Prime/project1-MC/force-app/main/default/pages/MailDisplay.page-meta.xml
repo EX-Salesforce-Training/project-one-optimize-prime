@@ -3,5 +3,5 @@
     <apiVersion>48.0</apiVersion>
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <label>PastDeliveriesandPackages</label>
+    <label>MailDisplay</label>
 </ApexPage>
