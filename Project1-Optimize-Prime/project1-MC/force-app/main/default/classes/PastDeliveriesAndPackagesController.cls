@@ -13,18 +13,19 @@ public class PastDeliveriesAndPackagesController {
     *   Create two variables that have their own getter and setter methods
     *   The first should be a Order variable for holding a value for the database
     *   The second variable should be of type list and hold a list of Order objects */
-    public Order orderVal {get;set;}
-    public list<Order> orderList {get;set;}
+    public Mail__c mailVal {get;set;}
+    public list<Mail__c> mailList {get;set;}
 
     //Create a public constructor that will set the orderVal variable to a default value.
     public PastDeliveriesAndPackagesController(){
-        orderVal = New Order(Order_Status__c = 'Created');
+        mailVal = New Mail__c(Delivery_Status__c = 'Processing');
     }
 
     //Create a method that will generate a list of Orders. Returning nothing and taking no parameters.
-    public void genOrderList(){
+    public void genMailList(){
         //Assign the orderList variable to hold a SOQL statement that will hold ingormation to display
-        orderList = [select id, ordernumber, type, description, enddate from Order
-        where Order_Status__c = :orderVal.Order_Status__c];
+        mailList = [select id, name, number_of_packages__c,
+        height__c, width__c, length__c, fragile__c, insurance__c
+        from Mail__c where Delivery_Status__c = :mailVal.Delivery_Status__c];
     }
 }
