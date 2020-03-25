@@ -10,7 +10,7 @@
             <apex:commandButton action="{!genMailList}" 
             value="Generate List" reRender="display"/>
             </apex:pageBlock>
-            <apex:pageBlock id="dispay" title="Orders">
+            <apex:pageBlock id="display" title="Orders">
                 <apex:pageBlockTable value="{!mailList}" var="ml">
                     <apex:column value="{!ml.name}"/>
                     <apex:column value="{!ml.Number_of_Packages__c}"/>
