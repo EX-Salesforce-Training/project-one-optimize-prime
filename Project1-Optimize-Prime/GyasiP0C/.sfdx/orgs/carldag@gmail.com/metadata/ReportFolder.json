@@ -1,0 +1,17 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "0056g0000044Gy2AAE",
+    "createdByName": "Carl Johnson",
+    "createdDate": "1970-01-01T00:00:00.000Z",
+    "fileName": "unfiled$public",
+    "fullName": "unfiled$public",
+    "id": "",
+    "lastModifiedById": "0056g0000044Gy2AAE",
+    "lastModifiedByName": "Carl Johnson",
+    "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+    "manageableState": "unmanaged",
+    "namespacePrefix": "",
+    "type": "ReportFolder"
+  }
+}
