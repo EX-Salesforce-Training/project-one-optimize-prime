@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Mail_Handler_Info</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Mail Handler Info</label>
+        <sharedTo>
+            <role>Mail_Handler</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Driver</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

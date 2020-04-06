@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Track__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Location of driver (user) on their route.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Where the driver (user) is on his/her route.</inlineHelpText>
+    <label>Track</label>
+    <referenceTo>Track__c</referenceTo>
+    <relationshipLabel>Routes</relationshipLabel>
+    <relationshipName>Routes</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
